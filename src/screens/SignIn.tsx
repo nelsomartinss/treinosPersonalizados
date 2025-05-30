@@ -1,7 +1,9 @@
+import { Button } from "@/components/ui/button";
+
 const SignIn = () => {
     return (
         <section>
-            <h1>Teste</h1>
+           <Button>Testando</Button>
         </section>
     )
 }
