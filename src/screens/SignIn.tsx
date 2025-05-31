@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button"
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
   CardFooter,
@@ -10,6 +9,8 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Link } from 'react-router-dom';
+
 import fundoAcademia from '@/assets/academia-fundo-vermelho.png'
 
 export function SignIn() {
@@ -22,9 +23,6 @@ export function SignIn() {
                 <CardDescription>
                   Digite seu e-mail para acessar sua conta
                 </CardDescription>
-                <CardAction>
-                  <Button variant="link">Cadastrar</Button>
-                </CardAction>
               </CardHeader>
               <CardContent>
                 <form>
@@ -41,12 +39,9 @@ export function SignIn() {
                     <div className="grid gap-2">
                       <div className="flex items-center">
                         <Label htmlFor="password">Senha</Label>
-                        <a
-                          href="#"
-                          className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                        >
-                         Esqueceu sua senha?
-                        </a>
+                        <Link to="/password-reset" className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
+                          Esqueceu sua senha?
+                        </Link>
                       </div>
                       <Input id="password" type="password" required placeholder="*******"/>
                     </div>
@@ -54,12 +49,13 @@ export function SignIn() {
                 </form>
               </CardContent>
               <CardFooter className="flex-col gap-2">
-                <Button type="submit" className="w-full">
-                  Entrar
+                <Button type="submit" className="w-full" asChild> 
+                  <Link to='/menu'>Entrar</Link>
                 </Button>
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full" >
                   Entrar com o Google
                 </Button>
+                <p className='text-muted-foreground text-center text-sm mt-3'>Ao entrar em nossa plataforma você concorda com nossos Termos de Uso e Politíca de Privacidade.</p>
               </CardFooter>
             </Card>
         </section>
